@@ -1,0 +1,6 @@
+@mixin grid( $gapColumn: 10px, $gapRow: 10px, $width: 0px) {
+    display: grid;
+    grid-row-gap: $gapRow;
+    grid-column-gap: $gapColumn;
+    grid-template-columns: $width 1fr;
+}

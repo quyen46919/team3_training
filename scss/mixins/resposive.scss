@@ -1,0 +1,36 @@
+@mixin responsive($breakpoint) {
+  // Big desktop
+  @if $breakpoint == bigDesktop {
+    @media (max-width: 1800px) {
+      @content;
+    }
+  }
+
+  // Desktop
+  @if $breakpoint == desktop {
+    @media (max-width: 1200px) {
+      @content;
+    }
+  }
+
+  // DesktopSmall
+  @if $breakpoint == desktopSmall {
+    @media (max-width: 1000px) {
+      @content;
+    }
+  }
+
+  // Tablet
+  @if $breakpoint == tablet {
+    @media (max-width: 900px) {
+      @content;
+    }
+  }
+
+  // Mobile
+  @if $breakpoint == mobile {
+    @media (max-width: 600px) {
+      @content;
+    }
+  }
+}

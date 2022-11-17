@@ -1,0 +1,107 @@
+@import "../varialable/general.scss";
+@import "../mixins/typo.scss";
+@import "../mixins/btn.scss";
+@import "../mixins/display.scss";
+@import "../mixins/resposive.scss";
+
+.footer {
+  margin-top: 128px;
+  background-color: $blackColor;
+  &__main {
+    padding: 0 80px;
+    @include responsive(mobile) {
+      padding: 0 30px;
+    }
+  }
+  &__on {
+    @include Displayflex(center, space-between, 0);
+    padding: 57px 0px;
+    @include responsive(mobile) {
+      justify-content: center;
+    }
+  }
+
+  &__logo {
+    font-size: 30px;
+    font-weight: 900;
+    color: $whiteColor;
+  }
+  &__nav--link {
+    @include Body1(($whiteColor));
+    margin-left: 24px;
+    @include responsive(tablet) {
+      display: none;
+    }
+  }
+  &__between {
+    @include Displayflex(start, space-between, 0);
+    padding: 80px 64px;
+    background-color: rgb(255, 255, 255, 0.06);
+    @include responsive(tablet) {
+      flex-direction: column;
+      align-items: center;
+      padding: 40px 40px;
+    }
+    @include responsive(mobile) {
+      padding: 40px 20px;
+    }
+  }
+  &__between--title {
+    @include Heading2();
+    color: white;
+    max-width: 562px;
+    @include responsive(tablet) {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+  }
+  &__between--input {
+    padding: 0 20px;
+    width: 300px;
+    height: 53px;
+    @include Body1($whiteColor);
+    background-color: transparent;
+    border: 0.5px solid $darkGreyColor;
+    outline: none;
+    margin-right: 24px;
+
+    @include responsive(mobile) {
+      margin-right: 0px;
+      width: 100%;
+      margin: 20px 0;
+    }
+  }
+
+  &__between--group {
+    @include Displayflex(center, start, 0);
+
+    @include responsive(mobile) {
+      flex-direction: column;
+    }
+  }
+  &__between--btn {
+    @include btn();
+    @include responsive(tablet) {
+      width: 100%;
+    }
+  }
+  &__below {
+    @include Displayflex(center, space-between, 0);
+    padding: 48px 0px;
+    @include responsive(tablet) {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+  &__below--info {
+    @include Body1($whiteColor);
+    opacity: 0.6;
+    @include responsive(tablet) {
+      margin-bottom: 20px;
+      text-align: center;
+    }
+  }
+  &__below--link {
+    margin-left: 26px;
+  }
+}

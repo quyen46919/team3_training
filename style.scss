@@ -1,0 +1,512 @@
+// sass ./scss/components/header.scss:css/header.css --watch
+// sass ./style.scss:style.css --watch
+@import "./scss/base.scss";
+@import "./scss/varialable/general.scss";
+@import "./scss/mixins/btn.scss";
+@import "./scss/mixins/typo.scss";
+@import "./scss/mixins/display.scss";
+@import "./scss/mixins/grid.scss";
+
+// BANNER
+.home {
+  width: 100%;
+  height: auto;
+  &__banner--img {
+    height: 720px;
+    background-color: rgba(0, 0, 0, 0.2);
+    background-image: url(./public/banner.png);
+    background-color: $blackColor;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+  }
+
+  &__banner--overlay {
+    background: radial-gradient(30.56% 76.04% at 74.58% 0%, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.6) 100%);
+    position: absolute;
+    width: 100%;
+    height: 100%;
+  }
+
+  &__banner--info {
+    @include Position(123px, 0, 0px, 81px);
+    max-width: 804px;
+    @include responsive(tablet) {
+      @include Position(30px, 0, 0, 0);
+      margin: 30px;
+    }
+  }
+
+  &__banner--label {
+    @include Cap1($whiteColor);
+    text-transform: uppercase;
+    span {
+      font-family: $fontInter;
+      font-weight: 900;
+    }
+  }
+
+  &__banner--heading {
+    @include Display;
+  }
+
+  &__banner--author {
+    @include Body1($whiteColor);
+    margin: 24px 0 16px 0;
+
+    span {
+      color: $yellowColor;
+    }
+  }
+
+  &__banner--desc {
+    @include Body1($whiteColor);
+    margin-bottom: 48px;
+    @include responsive(mobile) {
+      margin-bottom: 10px;
+    }
+  }
+
+  &__btn {
+    @include btn();
+    @include responsive(mobile){
+      width: 100%;
+    }
+  }
+}
+
+
+// POST
+
+.home {
+  &__post{
+    margin-top: 130px;  
+    @include grid(32px, 0, 57.176%);
+
+    @include responsive(mobile){
+      @include grid(32px, 0, 100%);
+    }
+
+    @include responsive(tablet){
+      @include grid(32px, 32px, 100%);
+      grid-template-columns: 1fr;
+    }
+}
+  &__title{
+    @include Heading2();
+}
+  &__post--wrap{
+    margin-top: 32px;
+    padding: 32px;
+    box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+}
+  &__post--img{
+    width: 100%;
+}
+  &__post--author{
+    @include Body2($darkGreyColor);
+    font-weight: 500;
+    
+
+    span{
+      color: $purpleColor;
+    }
+    
+}
+  &__post--heading{
+    @include Heading3();
+    margin: 16px 0 16px 0;
+    
+}
+  &__post--desc{
+    @include Body1();
+    margin-bottom: 32px;
+    
+}
+
+  &__post--right--more{
+    @include Displayflex(center, space-between, 0);
+    margin-bottom: 32px;
+    @include responsive(mobile){
+      margin-top: 50px;
+    }
+}
+  &__post-viewall{
+    @include Body1($purpleColor)
+}
+  &__post--item{
+    padding: 32px 116px 25px 32px;
+    &:hover{
+      background-color: $lightYellowColor;
+      transition: background-color 0.2s linear; 
+    }
+    @include responsive(desktopSmall){
+      padding: 32px 10px 25px 0px;
+    }
+    @include responsive(tablet){
+      padding: 32px 32px 25px 32px;
+    }
+}
+  &__poss--content{
+    @include Heading4();
+    max-width: 369px;
+    margin-top: 8px;
+    
+}
+}
+
+
+// HOME ABOUT
+.home {
+  &__about{
+    padding: 88px 108px 104px 80px;
+    background-color: $lavendarColor;
+    width: 100%;
+    margin-top: 159px;
+    height: auto;
+    position: relative;
+    @include grid(61px, 0, 1fr);
+    ::after{
+      content: '';
+      background-color: $yellowColor;
+      height: 23px;
+      width: 65.85%;
+      @include Position(-23px, 0,0,calc(100% - 80%));
+      z-index: 1;
+    }
+    ::before{
+      content: '';
+      background-color: $purpleColor;
+      height: 23px;
+      width: 22%;
+      @include Position(-23px, 0,0,calc(100% - 22%));
+      z-index: 10;
+    }
+
+    @include responsive(mobile){
+      grid-template-columns: repeat(auto-fit, minmax(200px ,1fr));
+      padding: 50px 30px;
+    }
+}
+
+  &__about--label{
+    @include Cap1();
+    font-weight: 600;
+    margin-bottom: 24px;
+}
+  &__about--heading2{
+    @include Heading2()
+}
+  &__about--desc{
+    @include Body1($mediumGreyColor);
+    margin: 16px 0;
+}
+  &__about--btn{
+    @include btn(transparent, $purpleColor);
+    padding: 0;
+    @include responsive(mobile){
+      margin-bottom: 70px;
+    }
+}
+
+  &__about--heading3{
+    @include Heading3();
+}
+}
+
+// CATAGORY
+.home {
+  &__catagogy--list{
+    @include grid(32px, 32px, 0);
+    grid-template-columns: repeat(auto-fit, minmax(200px ,1fr));
+    :hover{
+      background-color: $yellowColor; 
+      transition: all 0.5s linear;
+    }
+}
+  &__catagogy--item{
+    box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+    padding: 32px;
+    
+}
+
+  &__catagogy--icon{
+    width: 48px;
+    height: 48px;
+    background-color: $lightYellowColor;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+  &__catagogy--heading{
+    @include Heading3;
+    margin: 16px 0 4px 0;
+}
+  &__catagogy--desc{
+    @include Body1($mediumGreyColor);
+}
+
+  &__title-center{
+    text-align: center;
+    margin: 120px 0 48px 0;
+}
+}
+
+// SPECIAL
+.home {
+  &__special{
+    position: relative;
+    margin-top: 128px;
+    width: 100%;
+    height: 705px;
+    @include responsive(mobile) {
+      margin-top: 0px;
+    }
+}
+  &__special--img{
+    position: absolute;
+    width: auto;
+    height: auto;
+    @include responsive(mobile) {
+      display: none;
+    }
+    @include responsive(desktopSmall) {
+      width: 100%;
+    }
+}
+  &__special--content{
+    position: absolute;
+    width: 55.15%;
+    height: auto;
+    background-color: $whiteColor;
+    padding: 80px;
+    bottom: 0;
+    right: 0;
+    @include responsive(mobile) {
+      width: 100%;
+      padding: 20px;
+    }
+    @include responsive(tablet) {
+      width: 100%;
+      padding: 20px;
+    }
+}
+
+  &__special--label{
+    @include Cap1;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+  &__special--heading{
+    @include Heading1;
+    margin: 24px 0 16px 0;
+}
+
+  &__special--decs{
+    @include Body1;
+}
+
+  &__btn{
+    margin-top: 32px;
+}
+} 
+
+// LIST AUTHORS
+.home {
+
+  &__title-center{
+
+}
+  &__authors--list{
+    @include grid(32px, 32px, 0);
+    grid-template-columns: repeat(4 , 1fr);
+    :hover{
+      background-color: $lightYellowColor;
+      transition: all 0.5s linear;
+    }
+    @include responsive(mobile){
+      grid-template-columns: repeat(auto-fit, minmax(200px ,1fr));
+    }
+    @include responsive(tablet){
+      grid-template-columns: repeat(auto-fit, minmax(300px ,1fr));
+    }
+}
+
+  &__author--img{
+    margin-bottom: 20px;
+}
+
+  &__author--item{
+    background-color: $lightGreyColor;
+    padding: 40px 28px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+  &__author--name{
+    @include Heading3;
+    text-align: center;
+}
+  &__author--position{
+    @include Body2;
+    margin-bottom: 20px;
+    text-align: center;
+}
+  &__author--icon{
+     margin: 6px;
+     width: 16px;
+     height: 16px;
+}
+}
+
+// LOGO COMPANY
+.home {
+  &__logo--company{
+    @include Displayflex(center, center, 87px);
+    margin-top: 96px;
+
+    @include responsive(mobile){
+      flex-direction: column;
+    }
+    @include responsive(tablet){
+      flex-direction: column;
+    }
+}
+  &__logo--title{
+    color: $mediumGreyColor;
+}
+  &__logo--lable{
+    @include Body2();
+    @include responsive(mobile){
+      text-align: center;
+    }
+}
+  &__logo--heading{
+    @include Heading4();
+}
+}
+
+// TEST
+.home {
+  &__test{
+    width: 100%;
+    height: auto;
+    margin-top: 96px;
+    background: $lightYellowColor;
+    padding: 80px 174px 74px 112px;
+    @include Displayflex(start, start, 176px);
+    position: relative;
+    &::after {
+      content: '';
+      width: 0.5px;
+      height: 70%;
+      position: absolute;
+      top: 50%;
+      left: 35%;
+      transform: translateY(-50%);
+      background: $mediumGreyColor;
+      opacity: 0.3;
+      @include responsive(mobile){
+        display: none;
+      }
+      @include responsive(tablet){
+        display: none;
+      }
+    }
+
+    @include responsive(mobile){
+      flex-direction: column;
+      gap: 50px;
+      padding: 50px 20px;
+    }
+    @include responsive(tablet){
+      flex-direction: column;
+      gap: 50px;
+      padding: 50px 20px;
+    }
+}
+
+  &__test--label{
+    @include Cap1();
+    font-weight: 600;
+}
+  &__test--heading{
+    @include Heading2();
+    margin: 12px 0 16px 0;
+}
+  &__test--desc{
+    @include Body1();
+}
+  &__test--title{
+    @include Heading4();
+    margin-bottom: 121px;
+    flex-direction: column;
+      @include responsive(mobile) {
+        margin-bottom: 40px;
+      }
+}
+  &__test--group{
+    @include Displayflex(center, space-between);
+}
+
+  &__test--author{
+    margin-left: 16px;
+}
+
+  &__test--info{
+    @include Displayflex(center, start);
+}
+  &__test--name{
+    @include Heading4();
+}
+  &__test--from{
+    @include Body1($mediumGreyColor);
+}
+  &__test--control{
+    @include Displayflex(center, start);
+}
+  &__test--btn{
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background-color: $whiteColor;
+    @include Displayflex();
+    margin-right: 20px;
+    &:hover{
+      background-color: $blackColor;
+      width: 50px;
+      height: 50px;
+      @include Displayflex;
+      border-radius: 50%;
+      transform: scale(1.2);
+      color: $whiteColor;
+      cursor: pointer;
+      transition: all 0.1s linear;
+    }
+}
+}
+
+
+.home {
+  &__join{
+    max-width: 414px;
+    text-align: center;
+    margin: 0 auto;
+}
+  &__join--heading{
+    @include Heading2();
+    text-align: center;
+    margin: 128px 0 16px 0;
+}
+  &__join--desc{
+    @include Body1();
+    text-align: center;
+}
+  &__btn{
+
+}
+}

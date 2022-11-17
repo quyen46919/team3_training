@@ -1,0 +1,126 @@
+@import "../varialable/general.scss";
+@import "../mixins/typo.scss";
+@import "../mixins/btn.scss";
+@import "../mixins/display.scss";
+@import "../mixins/resposive.scss";
+
+.header {
+  height: 80px;
+  width: 100%;
+  background: $blackColor;
+  @include Displayflex(center, space-between, 0);
+  padding: 0 80px;
+  @include responsive(tablet) {
+    padding: 0 30px;
+  }
+  
+  &__icon--mobile {
+    font-size: 30px;
+    display: none;
+    color: $whiteColor;
+    @include responsive(tablet) {
+      display: block; 
+    }
+  }
+
+  &__logo {
+    color: $whiteColor;
+    font-weight: 600;
+    font-size: 30px;
+    font-family: $fontInter;
+  }
+
+  &__right {
+    @include Displayflex(center, space-between, 0);
+  }
+
+  &__item {
+    @include Body1($whiteColor);
+    margin-left: 14px;
+    @include responsive(mobile) {
+      display: none;
+    }
+    @include responsive(tablet) {
+      display: none;
+    }
+    &:hover{
+      color: $greyColor;
+    }
+  }
+
+  &__btn {
+    @include btn($whiteColor, $blackColor);
+    margin-left: 32px;
+    @include responsive(mobile) {
+      display: none;
+    }
+    @include responsive(tablet) {
+      display: none;
+    }
+  }
+}
+
+.header {
+  &__menu--mobile {
+    display: none;
+    animation: effect ease-in 0.4s;
+    @include Displayflex(center, center, 0px);
+    @include Position(11%, 0, 0, 0);
+    flex-direction: column;
+    background-color: $blackColor;
+    z-index: 100;
+    text-align: center;
+    padding: 60px 0 280px 0;
+    font-size: 22px;
+    display: none;
+    @include responsive(tablet) {
+      display: none;
+      &.active {
+        display: block;
+      }
+      
+    }
+  }
+  &__item--mobile {
+    color: $whiteColor;
+    @include Heading4;
+    color: $whiteColor;
+    text-align: center;
+    font-weight: 400;
+    padding: 20px 0px;
+    display: block;
+    &:hover {
+      color: $yellowColor;
+    }
+  }
+}
+
+.header {
+  &__icon--mobile {
+    position: relative;
+  }
+  &__icon--close {
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+  }
+  .header__icon--mobile.active &__icon--open {
+    display: none;
+  }
+  .header__icon--mobile.active &__icon--close {
+    position: absolute;
+    top: -15px;
+    left: -20px;
+  }
+}
+
+@keyframes effect {
+  from {
+    transform: translateX(200px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
