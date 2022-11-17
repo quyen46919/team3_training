@@ -1,0 +1,19 @@
+@mixin btn($bgColor: $yellowColor, $color: $blackColor) {
+    font-weight: 700;
+    font-size: 18px;
+    padding: 16px 48px 16px 48px;
+    background-color: $bgColor;
+    color: $color;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.2s linear; 
+    @if $bgColor == $yellowColor {
+        &:hover {
+            background-color: #EDC14A;
+        }
+    } @else {
+        &:hover {
+            background-color: #f1e9e9;
+        }
+    }
+}

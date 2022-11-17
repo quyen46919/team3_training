@@ -1,0 +1,108 @@
+@import url("https://fonts.googleapis.com/css2?family=Sen:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;900&display=swap");
+@import "../varialable/general.scss";
+
+$fontSen: "Sen";
+$fontInter: "Inter";
+
+// TYPO HEADING
+
+@mixin Display {
+    font-family: $fontSen;
+    font-size: 56px;
+    font-weight: 700;
+    line-height: 64px;
+    letter-spacing: -2px;
+    text-align: left;
+    color: $whiteColor;
+    margin: 24px 0;
+    
+}
+
+
+@mixin Heading1{
+    font-family: $fontSen;
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 64px;
+    letter-spacing: -2px;
+    text-align: left;
+}
+
+@mixin Heading2($color: $blackColor){
+    font-family: $fontSen;
+    font-size: 36px;
+    font-weight: 700;
+    line-height: 48px;
+    letter-spacing: -2px;
+    text-align: left;
+    color: $color;
+}
+
+@mixin Heading3{
+    font-family: $fontSen;
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 40px;
+    letter-spacing: -1px;
+    text-align: left;
+}
+
+@mixin Heading4{
+    font-family: $fontSen;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 32px;
+    letter-spacing: 0px;
+    text-align: left;
+}
+
+@mixin Heading5{
+    font-family: $fontSen;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 32px;
+    letter-spacing: 0px;
+    text-align: left;
+}
+
+@mixin Heading6{
+    font-family: $fontSen;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 24px;
+    letter-spacing: 0px;
+    text-align: left;
+}
+
+// TYPO BODY 1
+@mixin Body1($color: $mediumGreyColor){
+    font-family: $fontInter;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 28px;
+    text-align: left;
+    color: $color;
+}
+
+@mixin Body2 ($color: $mediumGreyColor){
+    font-family: $fontInter;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+    text-align: left;
+    color: $color;
+}
+
+@mixin Cap1($color: $blackColor) {
+    font-family: $fontInter;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 20px;
+    text-align: left;
+    color: $color;
+    letter-spacing: 3px;
+}
+
+
+
